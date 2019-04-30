@@ -4,7 +4,7 @@ export default () => {
   return (
     <div className="App">
       <header className="App-header">
-        
+        Search
       </header>
     </div>
   );

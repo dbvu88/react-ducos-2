@@ -1,0 +1,9 @@
+.container-nav-item {
+  /* margin: calc(10% / 7); */
+
+}
+
+a.active img {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}

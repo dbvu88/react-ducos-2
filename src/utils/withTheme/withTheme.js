@@ -2,8 +2,10 @@ import React from 'react';
 
 export default WrappedComponent => class Container extends React.Component {
 
+
     state = {
         style: {
+            position: 'relative',
             width: '100%',
             backgroundColor: '#efeeec',
             color: '#e1704d',
