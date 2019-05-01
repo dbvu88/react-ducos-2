@@ -1,15 +1,16 @@
 import React from 'react';
+import { colors } from './themes.js'
 
 export default WrappedComponent => class Container extends React.Component {
 
 
     state = {
-        currentTheme: '#e1704d',
+        currentTheme: colors[0],
         style: {
             position: 'relative',
             width: '100%',
             backgroundColor: '#efeeec',
-            color: '#e1704d',
+            color: colors[0],
         }
     }
 
@@ -18,7 +19,8 @@ export default WrappedComponent => class Container extends React.Component {
             const newStyle = state.style
             newStyle.color = hexValue
             return {
-                style: newStyle
+                style: newStyle,
+                currentTheme: hexValue
             }
         })
     }

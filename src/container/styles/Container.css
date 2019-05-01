@@ -10,6 +10,7 @@ nav {
 a {
   padding: 4px;
   box-sizing: border-box;
+  border: none;
   display: inline-block;
   width: calc(100% / 5);
   height: 100%;
@@ -18,7 +19,7 @@ a {
 }
 
 a.active, a:active {
-  background: #222222;
+  background: mediumseagreen;
 }
 
 a.active img {
@@ -30,14 +31,15 @@ a.active img {
 .theme-item {
   cursor: pointer;
   box-sizing: border-box;
+  /* border: 4px solid mediumseagreen;  */
+
   display: inline-block;
   width: calc(100% / 4);
-  padding: 20px 0px;
-  text-align: center
+  padding: 20px 15px;
+  /* text-align: center; */
 }
 
-.selected {
-  border: 4px solid #efeeec; 
-  color: #efeeec;
+.selected div::after {
+  content:'✔️'
 }
 
