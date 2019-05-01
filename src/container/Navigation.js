@@ -11,18 +11,10 @@ const Nav = props => {
     const { color: backgroundColor } = props.style
     const navStyle = { 
         backgroundColor, 
-        position: 'absolute', 
-        left: 0,
-        right: 0,
-        bottom: '0%',
-        height: props.navHeight,
+        height: props.navHeight
     }
     const anchorStyle = {
-        // border: `4px solid ${backgroundColor}`,
-        height: `100%`,
-        textAlign: `center`,
-        display: `inline-block`,
-        width: `calc(100% / 5)`
+        border: `4px solid ${backgroundColor}`,
     }
     const links = [
         // {icon: Back, path: '/Back'},
@@ -34,7 +26,7 @@ const Nav = props => {
         <nav style={navStyle}>
             
             <a 
-                style={anchorStyle}
+                // style={anchorStyle}
                 onClick={ e => {
                     e.preventDefault()
                     // console.log(props)
@@ -47,7 +39,7 @@ const Nav = props => {
         {
             links.map(link => (
                 <NavLink 
-                style={anchorStyle} 
+                // style={anchorStyle} 
                 exact to={link.path}>
                 <img 
                 style={{transition: `all 0.5s`}}
@@ -56,7 +48,7 @@ const Nav = props => {
             ))
         }            
             <a 
-                style={anchorStyle}
+                // style={anchorStyle}
                 onClick={ e => {
                     e.preventDefault()
                     props.history.goForward()

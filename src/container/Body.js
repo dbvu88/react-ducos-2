@@ -13,14 +13,22 @@ class Body extends React.Component {
     }
 
     render = () => {
-        console.log(this.props)
+        const { onThemeSelect, currentTheme } = this.props
         return (
             <div style={this.state.style}>
                 Body
                 <Route path='/apps' component={Apps}/>
                 <Route path='/search' component={Search}/>
                 <Route path='/tasks' component={Tasks}/>
-                <Route path='/themes' component={Themes}/>
+                <Route 
+                path='/themes' 
+                render={() => <Themes
+                    onThemeSelect={onThemeSelect}
+                    currentTheme={currentTheme}
+                    />
+                }
+                // onThemeSelect={this.props.onThemeSelect}
+                />
             </div>
         );
     }

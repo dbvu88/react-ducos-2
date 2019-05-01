@@ -4,6 +4,7 @@ export default WrappedComponent => class Container extends React.Component {
 
 
     state = {
+        currentTheme: '#e1704d',
         style: {
             position: 'relative',
             width: '100%',

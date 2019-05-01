@@ -1,15 +1,24 @@
+nav {
+  position: absolute; 
+  left: 0;
+  right: 0;
+  bottom: 0%;
+  max-width: 800px;
+  margin: auto
+}
+
 a {
-  cursor: pointer;
+  padding: 4px;
   box-sizing: border-box;
-  border: 4px solid #e1704d; 
-  transition: all 0.5s;
-  vertical-align: middle;
+  display: inline-block;
+  width: calc(100% / 5);
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
 }
 
 a.active, a:active {
-  box-sizing: border-box;
-  border-bottom-color: #efeeec;
-  transition: all 0.5s;
+  background: #222222;
 }
 
 a.active img {
@@ -17,3 +26,18 @@ a.active img {
   transition: all 0.5s;
   transform: rotate(90deg);
 }
+
+.theme-item {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  width: calc(100% / 4);
+  padding: 20px 0px;
+  text-align: center
+}
+
+.selected {
+  border: 4px solid #efeeec; 
+  color: #efeeec;
+}
+

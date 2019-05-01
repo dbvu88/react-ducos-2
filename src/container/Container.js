@@ -9,8 +9,13 @@ class Container extends React.Component {
         navHeight: '45px'
     }
 
+    componentDidMount = () => {
+        // this.props.history.push('/apps')
+    }
+
     render = props => {
         console.log(this.props)
+        const { onThemeSelect, currentTheme } = this.props
         return (
             <div 
             className="Container" 
@@ -18,7 +23,11 @@ class Container extends React.Component {
                 { ...this.props.style, height: '100%', overflow: 'auto'}
             }
             >
-                <Body {...this.state} onSelect/>
+                <Body 
+                {...this.state}
+                onThemeSelect={onThemeSelect}
+                currentTheme={currentTheme}
+                />
                 {/* <Head /> */}
                 <Nav {...this.state} {...this.props}/>
             </div>
