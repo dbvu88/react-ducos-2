@@ -1,9 +1,19 @@
-.container-nav-item {
-  /* margin: calc(10% / 7); */
+a {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 4px solid #e1704d; 
+  transition: all 0.5s;
+  vertical-align: middle;
+}
 
+a.active, a:active {
+  box-sizing: border-box;
+  border-bottom-color: #efeeec;
+  transition: all 0.5s;
 }
 
 a.active img {
-  transform: rotate(90deg);
+  /* width: 22px; */
   transition: all 0.5s;
+  transform: rotate(90deg);
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Apps from '../components/Apps'
 import Search from '../components/Search'
 import Tasks from '../components/Tasks'
+import Themes from '../settings/Themes'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class Body extends React.Component {
@@ -12,12 +13,14 @@ class Body extends React.Component {
     }
 
     render = () => {
+        console.log(this.props)
         return (
             <div style={this.state.style}>
                 Body
-                <Route path='/' component={Apps}/>
+                <Route path='/apps' component={Apps}/>
                 <Route path='/search' component={Search}/>
                 <Route path='/tasks' component={Tasks}/>
+                <Route path='/themes' component={Themes}/>
             </div>
         );
     }

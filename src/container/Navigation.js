@@ -3,10 +3,11 @@ import withTheme from '../utils/withTheme/withTheme'
 import Tasks from './assets/tasks.svg'
 import Apps from './assets/apps.svg'
 import Back from './assets/back.svg'
+import Foward from './assets/forward.svg'
 import Search from './assets/search.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 const Nav = props => {
-    console.log(props)
+    // console.log(props)
     const { color: backgroundColor } = props.style
     const navStyle = { 
         backgroundColor, 
@@ -17,21 +18,32 @@ const Nav = props => {
         height: props.navHeight,
     }
     const anchorStyle = {
-        boxSizing: `border-box`,
-        padding: `4px`,
+        // border: `4px solid ${backgroundColor}`,
         height: `100%`,
         textAlign: `center`,
         display: `inline-block`,
-        width: `calc(100% / 4)`
+        width: `calc(100% / 5)`
     }
     const links = [
-        {icon: Back, path: '/'}, 
-        {icon: Apps, path: '/'},
-        {icon: Search, path: '/Search'},
+        // {icon: Back, path: '/Back'},
+        {icon: Search, path: '/Search'}, 
+        {icon: Apps, path: '/Apps'},
         {icon: Tasks, path: '/Tasks'}
     ]
     return (
         <nav style={navStyle}>
+            
+            <a 
+                style={anchorStyle}
+                onClick={ e => {
+                    e.preventDefault()
+                    // console.log(props)
+                    props.history.goBack()
+                }}>
+                <img 
+                // style={{transition: `all 0.5s`}}
+                src={Back}/>
+            </a>
         {
             links.map(link => (
                 <NavLink 
@@ -42,7 +54,17 @@ const Nav = props => {
                 src={link.icon}/>
                 </NavLink>
             ))
-        }
+        }            
+            <a 
+                style={anchorStyle}
+                onClick={ e => {
+                    e.preventDefault()
+                    props.history.goForward()
+                }}>
+                <img 
+                // style={{transition: `all 0.5s`}}
+                src={Foward}/>
+            </a>
         </nav>
     )
 
