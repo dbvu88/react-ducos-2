@@ -5,28 +5,28 @@ export default WrappedComponent => class Container extends React.Component {
 
 
     state = {
-        currentTheme: colors[0],
-        style: {
-            position: 'relative',
-            width: '100%',
-            backgroundColor: '#efeeec',
-            color: colors[0],
-        }
+        currentTheme: colors[1],
     }
 
     onThemeSelect = hexValue => {
+
         this.setState(state => {
-            const newStyle = state.style
-            newStyle.color = hexValue
+            
             return {
-                style: newStyle,
+                // style: newStyle,
                 currentTheme: hexValue
             }
         })
     }
 
     render = () => {
-        return <WrappedComponent {...this.props} {...this.state} onThemeSelect={this.onThemeSelect}/>
+        const style = {
+            position: 'relative',
+            width: '100%',
+            backgroundColor: '#efeeec',
+            color: this.state.currentTheme,
+        }
+        return <WrappedComponent {...this.props} {...this.state} style={style} onThemeSelect={this.onThemeSelect}/>
     }
     
 }
