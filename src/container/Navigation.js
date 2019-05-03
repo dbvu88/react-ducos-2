@@ -15,7 +15,10 @@ const Nav = props => {
             link='back' 
             backgroundColor={backgroundColor} 
             callback={() => history.goBack()}/>
-            <ButtonGroup links={links} backgroundColor={backgroundColor}/>         
+            <ButtonGroup 
+            links={links} 
+            backgroundColor={backgroundColor}
+            activeStyle={activeButtonStyle()}/>         
             <HistoryButton 
             link='forward' 
             backgroundColor={backgroundColor} 
@@ -34,25 +37,36 @@ const buttonStyle = (file, bgColor) => {
         center / 32px 32px 
         no-repeat 
         content-box 
-        ${bgColor}`
+        ${bgColor}`,
+        boxShadow: `1px 1px 5px 1px ${bgColor}`
+    }
+}
+
+const activeButtonStyle = () => {
+    return {
+        boxShadow: `none`
     }
 }
 
 const Button = props => {
-    const { link, backgroundColor } = props
+    const { link, backgroundColor, activeStyle } = props
 
     return <NavLink 
     style={
         buttonStyle(link, backgroundColor)
     } 
+    activeStyle={activeStyle}
     exact to={`/${link}`} />
 }
 
 const ButtonGroup = props => {
-    const { links, backgroundColor } = props
+    const { links, backgroundColor, activeStyle } = props
 
     return links.map(link => {
-        return <Button backgroundColor={backgroundColor} link={link} />
+        return <Button  
+        backgroundColor={backgroundColor} 
+        link={link}
+        activeStyle={activeStyle}/>
     })
 }
 

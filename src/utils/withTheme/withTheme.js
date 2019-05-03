@@ -9,11 +9,11 @@ export default WrappedComponent => class Container extends React.Component {
     }
 
     onThemeSelect = hexValue => {
-
         this.setState(state => {
-            
+            if (state.currentTheme == hexValue) {
+                return null
+            }
             return {
-                // style: newStyle,
                 currentTheme: hexValue
             }
         })
@@ -26,7 +26,11 @@ export default WrappedComponent => class Container extends React.Component {
             backgroundColor: '#efeeec',
             color: this.state.currentTheme,
         }
-        return <WrappedComponent {...this.props} {...this.state} style={style} onThemeSelect={this.onThemeSelect}/>
+        return <WrappedComponent 
+        {...this.props} 
+        {...this.state} 
+        style={style} 
+        onThemeSelect={this.onThemeSelect} />
     }
     
 }
