@@ -6,31 +6,32 @@ import Themes from '../settings/Themes/Themes.js'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class Body extends React.Component {
-    state = {
-        style: { 
-            height: `calc(100% - ${this.props.navHeight})`,
-            backgroundColor: this.props.backgroundColor
-        }
-    }
 
     render = () => {
-        const { onThemeSelect, currentTheme } = this.props
+        const { onThemeSelect, currentTheme, secondaryColor, navHeight } = this.props
+        const sectionStyle = {
+            boxSizing: 'border-box', 
+            height: `calc(100% - ${navHeight})`,
+            minWidth: `320px`,
+            padding: '10px',
+            // margin: '2.5% auto',
+            // backgroundColor: secondaryColor
+        }
         return (
-            <div style={this.state.style}>
+            <section style={sectionStyle}>
                 Body
-                <Route path='/apps' render={(currentTheme) => Page(this.state.style)(Apps)}/>
+                {/* <Route path='/apps' render={(currentTheme) => Page({style: sectionStyle})(Apps)}/> */}
+                <Route path='/apps' render={() => <Apps theme={{currentTheme, secondaryColor}} />}/>
                 <Route path='/search' component={Search}/>
                 <Route path='/tasks' component={Tasks}/>
                 <Route 
                 path='/themes' 
-                render={() => <Themes
+                render={ () => <Themes
                     onThemeSelect={onThemeSelect}
-                    currentTheme={currentTheme}
-                    />
+                    currentTheme={currentTheme} />
                 }
-                // onThemeSelect={this.props.onThemeSelect}
                 />
-            </div>
+            </section>
         );
     }
     

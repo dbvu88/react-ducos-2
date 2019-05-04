@@ -5,16 +5,22 @@ import themeIcon from '../settings/Themes/themes.ico'
 
 export default props => {
   console.log(props)
-  // const style = 
+  const { 
+    currentTheme: color, 
+    secondaryColor: backgroundColor 
+  } = props.theme  
   return (
     <div className="App">
       <header className="App-header">
         Apps
       </header>
-      <Link to='/themes' className='shortcut' >
-        <img src={themeIcon} alt='theme-icon'/>
-        <div>Themes</div>
-      </Link>
+      <div className='shortcut-container' style={{color, backgroundColor}}>
+        <Link to='/themes' className='shortcut'>
+          <img className='shortcut-icon' src={themeIcon} alt='shortcut-icon'/>
+          <div className='shortcut-name' >Themes</div>
+        </Link>
+      </div>
+
     </div>
   );
 }

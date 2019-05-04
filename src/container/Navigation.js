@@ -59,7 +59,8 @@ const activeButtonStyle = (file, bgColor) => {
 const Button = props => {
     const { link, activeStyle, style } = props
 
-    return <NavLink 
+    return <NavLink
+    className='nav-item' 
     style={style} 
     activeStyle={activeStyle}
     exact to={`/${link}`} />
@@ -79,6 +80,7 @@ const ButtonGroup = props => {
 const HistoryButton = props => {
     const { link, backgroundColor, callback } = props
     return <a 
+    className='nav-item' 
     style={buttonStyle(link, backgroundColor)}
     onClick={ e => {
         e.preventDefault()

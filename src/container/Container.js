@@ -16,20 +16,20 @@ class Container extends React.Component {
 
     render = props => {
         console.log(this.props)
-        const { onThemeSelect, currentTheme } = this.props.theme
+        const { currentTheme } = this.props.theme
         const containerStyle = {
             backgroundColor: currentTheme, 
             height: '100%', 
-            overflow: 'auto'
+            overflow: 'auto',
+            minHeight: `480px`,            
+            // padding: '2.5%'
         }
         return (
             <div 
             className="Container" 
             style={containerStyle}>
                 <Body 
-                {...this.state} 
-                onThemeSelect={onThemeSelect}
-                currentTheme={currentTheme}
+                {...this.props.theme}
                 />
                 <Nav {...this.props} />
             </div>
