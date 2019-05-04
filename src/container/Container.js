@@ -5,10 +5,10 @@ import Body from './Body'
 import { Route, Link } from 'react-router-dom'
 import './styles/Container.css'
 class Container extends React.Component {
-    state = {
-        navHeight: '45px',
-        style: this.props.style
-    }
+    // state = {
+    //     navHeight: '45px',
+    //     style: this.props.style
+    // }
 
     componentDidMount = () => {
         // this.props.history.push('/apps')
@@ -16,9 +16,9 @@ class Container extends React.Component {
 
     render = props => {
         console.log(this.props)
-        const { onThemeSelect, currentTheme, history } = this.props
+        const { onThemeSelect, currentTheme } = this.props.theme
         const containerStyle = {
-            ...this.state.style, 
+            backgroundColor: currentTheme, 
             height: '100%', 
             overflow: 'auto'
         }
@@ -31,7 +31,7 @@ class Container extends React.Component {
                 onThemeSelect={onThemeSelect}
                 currentTheme={currentTheme}
                 />
-                <Nav {...this.state} history={history} />
+                <Nav {...this.props} />
             </div>
 
         );

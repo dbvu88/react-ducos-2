@@ -3,9 +3,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0%;
-  /* max-width: 800px; */
   min-width: 320px;
-  margin: auto;
   text-align: center;
   overflow: hidden;
 }
@@ -13,13 +11,13 @@ nav {
 a {
   border-bottom-left-radius: 50%; 
   border-bottom-right-radius: 50%; 
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   display: inline-block;
   width: 50px;
   margin: 0px 5px;
   height: 40px;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.25s;
 }
 
 .shortcut {
@@ -33,11 +31,12 @@ a {
 }
 
 a:active {
-  transform: translateY(-20px)
+  transform: translateY(-5px);
+  transition: all 0.25s;
 }
 
 a.active {
-  transition: all 0.5s;
+  transition: all 0.25s;
 }
 
 .theme-item {

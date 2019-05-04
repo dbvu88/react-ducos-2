@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom'
 
 const Nav = props => {
     console.log(props)
-    const { style, history, navHeight } = props
-    const { backgroundColor, color } = style
+    const { currentTheme, secondaryColor, navHeight } = props.theme
+    const { history } = props.router
     const navStyle = {
-        backgroundColor: color, 
+        backgroundColor: secondaryColor, 
         height: navHeight
     }
     const links = [ 'search', 'apps', 'tasks' ]
@@ -15,14 +15,14 @@ const Nav = props => {
         <nav style={navStyle}>
             <HistoryButton 
             link='back' 
-            backgroundColor={backgroundColor} 
+            backgroundColor={currentTheme} 
             callback={() => history.goBack()}/>
             <ButtonGroup 
             links={links} 
-            backgroundColor={backgroundColor}/>         
+            backgroundColor={currentTheme}/>         
             <HistoryButton 
             link='forward' 
-            backgroundColor={backgroundColor} 
+            backgroundColor={currentTheme} 
             callback={() => history.goForward()}/>
         </nav>
     )
