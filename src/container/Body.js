@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class Body extends React.Component {
     state = {
         style: { 
-            height: `calc(100% - ${this.props.navHeight})`
+            height: `calc(100% - ${this.props.navHeight})`,
+            backgroundColor: this.props.backgroundColor
         }
     }
 
@@ -17,7 +18,7 @@ class Body extends React.Component {
         return (
             <div style={this.state.style}>
                 Body
-                <Route path='/apps' component={Apps}/>
+                <Route path='/apps' render={(currentTheme) => Page(this.state.style)(Apps)}/>
                 <Route path='/search' component={Search}/>
                 <Route path='/tasks' component={Tasks}/>
                 <Route 
@@ -34,6 +35,8 @@ class Body extends React.Component {
     }
     
 }
+
+const Page = props => WrappedComponent => <WrappedComponent {...props} />
 
 export default Body
 

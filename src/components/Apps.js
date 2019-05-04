@@ -5,6 +5,7 @@ import themeIcon from '../settings/Themes/themes.ico'
 
 export default props => {
   console.log(props)
+  // const style = 
   return (
     <div className="App">
       <header className="App-header">

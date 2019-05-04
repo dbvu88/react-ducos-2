@@ -25,6 +25,7 @@ a {
 .shortcut {
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 
 .shortcut img {

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const Nav = props => {
+    console.log(props)
     const { style, history, navHeight } = props
     const { backgroundColor, color } = style
     const navStyle = {

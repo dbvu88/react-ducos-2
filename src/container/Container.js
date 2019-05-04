@@ -6,7 +6,8 @@ import { Route, Link } from 'react-router-dom'
 import './styles/Container.css'
 class Container extends React.Component {
     state = {
-        navHeight: '45px'
+        navHeight: '45px',
+        style: this.props.style
     }
 
     componentDidMount = () => {
@@ -15,21 +16,22 @@ class Container extends React.Component {
 
     render = props => {
         console.log(this.props)
-        const { onThemeSelect, currentTheme } = this.props
+        const { onThemeSelect, currentTheme, history } = this.props
+        const containerStyle = {
+            ...this.state.style, 
+            height: '100%', 
+            overflow: 'auto'
+        }
         return (
             <div 
             className="Container" 
-            style={
-                { ...this.props.style, height: '100%', overflow: 'auto'}
-            }
-            >
+            style={containerStyle}>
                 <Body 
-                {...this.state}
+                {...this.state} 
                 onThemeSelect={onThemeSelect}
                 currentTheme={currentTheme}
                 />
-                {/* <Head /> */}
-                <Nav {...this.state} {...this.props}/>
+                <Nav {...this.state} history={history} />
             </div>
 
         );

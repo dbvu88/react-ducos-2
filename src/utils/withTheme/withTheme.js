@@ -6,6 +6,7 @@ export default WrappedComponent => class Container extends React.Component {
 
     state = {
         currentTheme: colors[1],
+        secondaryColor: '#efeeec'
     }
 
     onThemeSelect = hexValue => {
@@ -24,14 +25,16 @@ export default WrappedComponent => class Container extends React.Component {
             position: 'relative',
             width: '100%',
             backgroundColor: this.state.currentTheme,
-            color: '#efeeec',
-
+            color: this.state.secondaryColor,
         }
-        return <WrappedComponent 
-        {...this.props} 
-        {...this.state} 
-        style={style} 
-        onThemeSelect={this.onThemeSelect} />
+        return <WrappedComponent
+        router={{...this.props}} 
+        theme={{
+            ...this.state,
+            navHeight: '45px',
+            onThemeSelect: this.onThemeSelect,
+        }}  
+        />
     }
     
 }
