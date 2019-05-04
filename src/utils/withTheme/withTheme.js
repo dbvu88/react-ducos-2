@@ -23,8 +23,9 @@ export default WrappedComponent => class Container extends React.Component {
         const style = {
             position: 'relative',
             width: '100%',
-            backgroundColor: '#efeeec',
-            color: this.state.currentTheme,
+            backgroundColor: this.state.currentTheme,
+            color: '#efeeec',
+
         }
         return <WrappedComponent 
         {...this.props} 
