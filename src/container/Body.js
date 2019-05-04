@@ -2,7 +2,7 @@ import React from 'react';
 import Apps from '../components/Apps'
 import Search from '../components/Search'
 import Tasks from '../components/Tasks'
-import Themes from '../settings/Themes'
+import Themes from '../settings/Themes/Themes.js'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class Body extends React.Component {

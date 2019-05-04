@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from '../utils/withTheme/themes'
+import { colors } from '../../utils/withTheme/themes'
 
 export default props => {
     console.log(props)

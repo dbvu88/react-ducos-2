@@ -20,8 +20,15 @@ a {
   height: 40px;
   cursor: pointer;
   transition: all 0.5s;
-  /* box-shadow: 0px 0px 5px 1px #bebebe; */
+}
 
+.shortcut {
+  text-decoration: none;
+  color: black;
+}
+
+.shortcut img {
+  width: 48px;
 }
 
 a:active {
@@ -34,11 +41,11 @@ a.active {
 
 .theme-item {
   cursor: pointer;
-  /* box-sizing: border-box; */
   display: inline-block;
   width: calc(100% / 4);
   height: 60px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .selected div::after {

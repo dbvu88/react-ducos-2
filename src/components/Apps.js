@@ -1,4 +1,7 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom'
+import themeIcon from '../settings/Themes/themes.ico'
+
 
 export default props => {
   console.log(props)
@@ -7,13 +10,16 @@ export default props => {
       <header className="App-header">
         Apps
       </header>
-      <a onClick={(e) => {
-        e.preventDefault()
-        props.history.goBack()
-      }}>Back</a>
-
+      <Link to='/themes' className='shortcut' >
+        <img src={themeIcon} alt='theme-icon'/>
+        <div>Themes</div>
+      </Link>
     </div>
   );
 }
 
 // export default App;
+
+const Apps = {
+  
+}
