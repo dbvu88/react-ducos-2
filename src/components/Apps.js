@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-import themeIcon from '../settings/Themes/themes.ico'
+import themeIcon from '../settings/Themes/themes.svg'
 
 
 export default props => {
@@ -12,7 +12,7 @@ export default props => {
   return (
     <div className="App">
       <header className="App-header">
-        Apps
+        {/* <h1>Apps</h1> */}
       </header>
       <div className='shortcut-container' style={{color, backgroundColor}}>
         <Link to='/themes' className='shortcut'>

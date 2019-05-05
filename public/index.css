@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+
+}
+
+nav {
+  position: absolute; 
+  left: 0;
+  right: 0;
+  bottom: 0%;
+  min-width: 320px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-item {
+  border-bottom-left-radius: 50%; 
+  border-bottom-right-radius: 50%; 
+  /* box-sizing: border-box; */
+  display: inline-block;
+  width: 50px;
+  margin: 0px 5px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+
+
+.nav-item:active {
+  transform: translateY(-5px);
+  transition: all 0.25s;
+}
+
+.nav-item.active {
+  transform: translateY(-5px);
+  transition: all 0.25s;
+}
+
+.theme-item {
+  cursor: pointer;
+  display: inline-block;
+  width: calc(100% / 4);
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.selected div::after {
+  /* display: block; */
+  content:'✔️'
+}
+
+.shortcut-container {
+  box-sizing: border-box; 
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px; 
+}
+
+.shortcut {
+  text-decoration: none;
+  color: #2d2d2d;
+}
+
+.shortcut-icon {
+  width: 48px;
+}
