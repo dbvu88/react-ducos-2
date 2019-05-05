@@ -11,7 +11,7 @@ export default WrappedComponent => class Container extends React.Component {
 
     onThemeSelect = hexValue => {
         this.setState(state => {
-            if (state.currentTheme == hexValue) {
+            if (state.currentTheme === hexValue) {
                 return null
             }
             return {

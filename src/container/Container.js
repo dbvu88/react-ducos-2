@@ -21,7 +21,7 @@ class Container extends React.Component {
             backgroundColor: currentTheme, 
             height: '100%', 
             overflow: 'auto',
-            minHeight: `480px`,            
+            // minHeight: `480px`,            
             // padding: '2.5%'
         }
         return (

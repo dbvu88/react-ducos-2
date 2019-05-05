@@ -29,28 +29,20 @@ nav {
 }
 
 .nav-item {
-  border-bottom-left-radius: 50%; 
-  border-bottom-right-radius: 50%; 
-  /* box-sizing: border-box; */
-  display: inline-block;
-  width: 50px;
-  margin: 0px 5px;
-  height: 40px;
-  cursor: pointer;
+  padding: 6.5px 16px;
+  vertical-align: middle;
   transition: all 0.25s;
+  /* width: calc(320px/5); */
+  text-align: center;
 }
 
 
 
 .nav-item:active {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   transition: all 0.25s;
 }
 
-.nav-item.active {
-  transform: translateY(-5px);
-  transition: all 0.25s;
-}
 
 .theme-item {
   cursor: pointer;
