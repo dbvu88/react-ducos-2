@@ -65,11 +65,16 @@ nav {
   padding: 10px;
   border-radius: 10px; 
 }
-
 .shortcut {
   text-decoration: none;
+  color: #9b9b9b;
+}
+
+.shortcut:active {
   color: #2d2d2d;
 }
+
+
 
 .shortcut-icon {
   width: 48px;
