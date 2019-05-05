@@ -61,9 +61,10 @@ nav {
 .shortcut-container {
   box-sizing: border-box; 
   text-align: center;
-  width: 100px;
+  width: 80px;
   padding: 10px;
-  border-radius: 10px; 
+  border-radius: 10px;
+  margin: 10px; 
 }
 .shortcut {
   text-decoration: none;
@@ -81,5 +82,5 @@ nav {
 }
 
 .App {
-  
+
 }

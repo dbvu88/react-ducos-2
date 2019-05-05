@@ -13,7 +13,7 @@ export default props => {
 
     
     return (
-        <div className="App">
+        <div className="App" style={{backgroundColor: props.secondaryColor}}>
             <header className="App-header">
                 <h1>Pick a Color</h1>
             </header>

@@ -13,7 +13,7 @@ class Body extends React.Component {
             boxSizing: 'border-box', 
             height: `calc(100% - ${navHeight})`,
             minWidth: `320px`,
-            padding: '10px',
+            // padding: '10px',
             // margin: '2.5% auto',
             // backgroundColor: secondaryColor
         }
@@ -28,7 +28,8 @@ class Body extends React.Component {
                 path='/themes' 
                 render={ () => <Themes
                     onThemeSelect={onThemeSelect}
-                    currentTheme={currentTheme} />
+                    currentTheme={currentTheme}
+                    secondaryColor={secondaryColor} />
                 }
                 />
             </section>
